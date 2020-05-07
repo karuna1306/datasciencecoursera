@@ -1,0 +1,32 @@
+---
+title: "Developing Data Products-Week 2-Assignment"
+author: "Karuna Raghuwanshi"
+date: "07/05/2020"
+output:
+  html_document: default
+  pdf_document: default
+  word_document: default
+---
+
+### Overview
+This Project is to create one map of any location using leaflet.
+
+### India Gate Map Creation
+
+This map shows the India gate in delhi.
+
+```{r}
+# Loading the libraries
+library(leaflet)
+#map creation
+map <- leaflet() %>%
+addTiles()
+# World map - click to zoom in and zoom out
+map
+# Create a link to know more about India gate and delhi Tourism.
+# click on the blue location icon and then in link in map to know more.
+India_Gate <- c("<a href='http://www.delhitourism.gov.in/delhitourism/tourist_place/india_gate.jsp' >Delhi Tourism</a>")
+leaflet() %>%
+addTiles() %>%
+addMarkers(lat=28.6129, lng=77.2295, popup = India_Gate)
+```
