@@ -1,0 +1,40 @@
+---
+title: "Developing Data Products Week 3 Assignment"
+subtitle: "Use the spacebar or arrow keys to navigate slides"
+author: "Karuna Raghuwanshi"
+date: "9th May 2020"
+output: 
+  ioslides_presentation:
+    widescreen: true
+    smaller: true
+    incremental: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r echo=FALSE, warning=FALSE, message=FALSE }
+library(ggplot2)
+library(plotly)
+```
+
+## Diamond Price
+#### hover over the graph to check price
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+library(plotly)
+
+d <- diamonds[sample(nrow(diamonds), 1000), ]
+
+figure <- plot_ly(
+  d, x = ~carat, y = ~price,
+  # Hover text:
+  text = ~paste("Price: ", price, '$<br>Cut:', cut),
+  color = ~carat, size = ~carat
+)
+
+figure
+```
+
+## Thank You!!!
